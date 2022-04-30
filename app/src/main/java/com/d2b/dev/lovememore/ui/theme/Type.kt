@@ -1,4 +1,4 @@
-package com.d2b.dev.lovememore.ui.theme
+package com.d2b.dev.lovememory.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

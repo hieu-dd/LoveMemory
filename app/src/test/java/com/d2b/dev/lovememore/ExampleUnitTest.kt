@@ -1,4 +1,4 @@
-package com.d2b.dev.lovememore
+package com.d2b.dev.lovememory
 
 import org.junit.Test
 
