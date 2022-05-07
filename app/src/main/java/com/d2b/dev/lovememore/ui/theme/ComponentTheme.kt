@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.d2b.dev.lovememore.R
+import com.d2b.dev.lovememory.ui.theme.*
 
 @Composable
 fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier = Modifier) {

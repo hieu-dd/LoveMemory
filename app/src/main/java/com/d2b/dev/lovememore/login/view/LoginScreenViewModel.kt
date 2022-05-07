@@ -1,9 +1,7 @@
 package com.d2b.dev.lovememore.login.view
 
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
 
-class LoginScreenViewModel {
-
-    val userName = mutableStateOf("")
-    val passWord = mutableStateOf("")
+class LoginScreenViewModel : ViewModel() {
 }

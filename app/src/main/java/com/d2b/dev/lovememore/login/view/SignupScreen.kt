@@ -10,6 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.compose.ui.unit.Dp
@@ -31,7 +32,7 @@ fun SignupScreen() {
             .background(MaterialTheme.colors.surface)
             .padding(16.dp)
     ) {
-        TopSection(title = "Sign Up", true)
+        TopSection(title = stringResource(id = R.string.sign_up), true)
         Spacer(modifier = Modifier.height(30.dp))
         InputSection(viewModel)
     }
@@ -39,25 +40,23 @@ fun SignupScreen() {
 
 @Composable
 fun InputSection(viewModel: SignupScreenViewModel) {
-    var userName by remember { viewModel.userName }
-    var password by remember { viewModel.userName }
     var isVerifiedPassword by remember { mutableStateOf(false) }
     Column {
-        TextInput(hint = "User name") {
-            userName = it
+        TextInput(hint = stringResource(id = R.string.user_name)) {
+//            userName = it
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextInput(hint = "Password") {
-            password = it
+        TextInput(hint = stringResource(id = R.string.password)) {
+//            password = it
         }
         Spacer(modifier = Modifier.height(16.dp))
-        TextInput(hint = "Verify your password") {
-            isVerifiedPassword = it == password
+        TextInput(hint = stringResource(id = R.string.verify_your_password)) {
+//            isVerifiedPassword = it == password
         }
         Spacer(modifier = Modifier.height(30.dp))
 
-        CustomButton(text = "Sign Up", backgroundColor = MaterialTheme.colors.primary) {
+        CustomButton(text = stringResource(id = R.string.sign_up), backgroundColor = MaterialTheme.colors.primary) {
         }
     }
 }
