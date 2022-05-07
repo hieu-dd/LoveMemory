@@ -2,7 +2,15 @@ package com.d2b.dev.lovememory.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Primary = Color(0xFFFF6B6C)
+val LightBlue = Color(0xFFBAC7FF)
+val White = Color(0xFFFFFFFB)
+val DarkGray = Color(0xffb8b8d1)
+val PrimaryYellow = Color(0xFFFFc145)
+val PrimaryBlue = Color(0xff5b5f97)
+
+val SurfaceDarkMode = Color(0xFF303030)
+val SurfaceLightMode = Color(0xFFFFFFFF)
+val OnSurfaceDarkMode = Color(0xFF000000)
+val OnSurfaceLightMode = Color(0xFFFFFFFF)
+
