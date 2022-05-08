@@ -3,7 +3,6 @@ package com.d2b.dev.lovememory.ui.theme
 import  androidx.compose.material.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.BasicTextField
@@ -34,7 +33,7 @@ fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier 
                 painter = painterResource(id = R.drawable.ic_baseline_arrow_back_ios_24),
                 contentDescription = null,
                 modifier = Modifier.size(24.dp),
-                tint = if (isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode
+                tint = MaterialTheme.colors.onSurface
             )
         } else {
             Spacer(modifier = Modifier.size(24.dp))
@@ -44,15 +43,16 @@ fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier 
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
             style = MaterialTheme.typography.body2,
-            color = if (isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode,
-            modifier = Modifier.weight(1f), textAlign = TextAlign.Center
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.weight(1f),
+            textAlign = TextAlign.Center
         )
         Spacer(modifier = Modifier.size(24.dp))
     }
 }
 
 @Composable
-fun TextInput(hint: String, getInput: (String) -> Unit) {
+fun TextInput(hint: String, onTextChange: (String) -> Unit) {
     var text by remember { mutableStateOf("") }
     var isHintDisplay by remember { mutableStateOf(hint.isNotEmpty()) }
     Box() {
@@ -60,7 +60,7 @@ fun TextInput(hint: String, getInput: (String) -> Unit) {
             value = text,
             onValueChange = {
                 text = it
-                getInput(it)
+                onTextChange(it)
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -68,7 +68,7 @@ fun TextInput(hint: String, getInput: (String) -> Unit) {
                 .background(LightBlue)
                 .padding(1.dp)
                 .clip(CircleShape)
-                .background(if (isSystemInDarkTheme()) SurfaceDarkMode else SurfaceLightMode)
+                .background(MaterialTheme.colors.surface)
                 .padding(horizontal = 20.dp, vertical = 12.dp)
                 .onFocusChanged {
                     isHintDisplay = it.isFocused != true && text.isEmpty()
@@ -114,7 +114,7 @@ fun CustomButton(
             .background(DarkGray)
             .padding(1.dp)
             .clip(CircleShape)
-            .background(if (isSystemInDarkTheme()) SurfaceDarkMode else SurfaceLightMode)
+            .background(MaterialTheme.colors.surface)
             .clickable { clickable() }
             .padding(horizontal = 10.dp, vertical = 14.dp)
     }
@@ -149,7 +149,7 @@ fun CustomButton(
                     modifier = Modifier
                         .padding(horizontal = iconPadding)
                         .size(16.dp),
-                    tint = if (isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode
+                    tint = MaterialTheme.colors.onSurface
                 )
             } else {
                 Spacer(modifier = Modifier.size(16.dp))

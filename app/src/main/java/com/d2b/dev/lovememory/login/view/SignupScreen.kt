@@ -29,7 +29,10 @@ fun SignupScreen() {
             .background(MaterialTheme.colors.surface)
             .padding(16.dp)
     ) {
-        TopSection(title = stringResource(id = R.string.sign_up), true)
+        TopSection(
+            title = stringResource(id = R.string.sign_up),
+            hasArrowBack = true
+        )
         Spacer(modifier = Modifier.height(30.dp))
         InputSection(viewModel)
     }
