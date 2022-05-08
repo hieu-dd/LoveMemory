@@ -13,15 +13,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d2b.dev.lovememory.login.view.SignupScreenViewModel
 import com.d2b.dev.lovememory.ui.theme.CustomButton
 import com.d2b.dev.lovememory.ui.theme.TextInput
 import com.d2b.dev.lovememory.ui.theme.TopSection
+import dagger.hilt.android.lifecycle.HiltViewModel
 
 
 @Composable
 fun SignupScreen() {
-    val viewModel = SignupScreenViewModel()
+    val viewModel: SignupScreenViewModel = viewModel()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
