@@ -11,6 +11,6 @@ val PrimaryBlue = Color(0xff5b5f97)
 
 val SurfaceDarkMode = Color(0xFF303030)
 val SurfaceLightMode = Color(0xFFFFFFFF)
-val OnSurfaceDarkMode = Color(0xFF000000)
-val OnSurfaceLightMode = Color(0xFFFFFFFF)
+val OnSurfaceDarkMode = Color(0xFFFFFFFF)
+val OnSurfaceLightMode = Color(0xFF000000)
 

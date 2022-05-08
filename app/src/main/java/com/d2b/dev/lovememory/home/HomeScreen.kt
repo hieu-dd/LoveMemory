@@ -1,4 +1,4 @@
-package com.d2b.dev.lovememore.home
+package com.d2b.dev.lovememory.home
 
 import androidx.compose.runtime.Composable
 

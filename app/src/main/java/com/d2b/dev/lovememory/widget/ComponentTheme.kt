@@ -1,6 +1,5 @@
-package com.d2b.dev.lovememore.ui.theme
+package com.d2b.dev.lovememory.ui.theme
 
-import android.util.Log
 import  androidx.compose.material.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -8,11 +7,8 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,8 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.d2b.dev.lovememore.R
-import com.d2b.dev.lovememory.ui.theme.*
+import com.d2b.dev.lovememory.R
 
 @Composable
 fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier = Modifier) {
@@ -35,20 +30,24 @@ fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier 
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (hasArrowBack) {
-            Icon(painter = painterResource(id = R.drawable.ic_baseline_arrow_back_ios_24), contentDescription = null,
+            Icon(
+                painter = painterResource(id = R.drawable.ic_baseline_arrow_back_ios_24),
+                contentDescription = null,
                 modifier = Modifier.size(24.dp),
-                tint = if(isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode
+                tint = if (isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode
             )
-            Text(
-                text = title,
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                style = MaterialTheme.typography.body2,
-                color = if(isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode,
-                modifier = Modifier.weight(1f), textAlign = TextAlign.Center
-            )
+        } else {
             Spacer(modifier = Modifier.size(24.dp))
         }
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp,
+            style = MaterialTheme.typography.body2,
+            color = if (isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode,
+            modifier = Modifier.weight(1f), textAlign = TextAlign.Center
+        )
+        Spacer(modifier = Modifier.size(24.dp))
     }
 }
 
@@ -57,17 +56,19 @@ fun TextInput(hint: String, getInput: (String) -> Unit) {
     var text by remember { mutableStateOf("") }
     var isHintDisplay by remember { mutableStateOf(hint.isNotEmpty()) }
     Box() {
-        BasicTextField(value = text, onValueChange = {
-            text = it
-            getInput(it)
-        },
-            Modifier
+        BasicTextField(
+            value = text,
+            onValueChange = {
+                text = it
+                getInput(it)
+            },
+            modifier = Modifier
                 .fillMaxWidth()
                 .clip(CircleShape)
                 .background(LightBlue)
                 .padding(1.dp)
                 .clip(CircleShape)
-                .background(if(isSystemInDarkTheme()) SurfaceDarkMode else SurfaceLightMode)
+                .background(if (isSystemInDarkTheme()) SurfaceDarkMode else SurfaceLightMode)
                 .padding(horizontal = 20.dp, vertical = 12.dp)
                 .onFocusChanged {
                     isHintDisplay = it.isFocused != true && text.isEmpty()
@@ -113,7 +114,7 @@ fun CustomButton(
             .background(DarkGray)
             .padding(1.dp)
             .clip(CircleShape)
-            .background(if(isSystemInDarkTheme()) SurfaceDarkMode else SurfaceLightMode)
+            .background(if (isSystemInDarkTheme()) SurfaceDarkMode else SurfaceLightMode)
             .clickable { clickable() }
             .padding(horizontal = 10.dp, vertical = 14.dp)
     }
@@ -143,10 +144,12 @@ fun CustomButton(
             )
             if (endIcon != null) {
                 Icon(
-                    painter = painterResource(id = endIcon), contentDescription = null,
+                    painter = painterResource(id = endIcon),
+                    contentDescription = null,
                     modifier = Modifier
                         .padding(horizontal = iconPadding)
-                        .size(16.dp), tint = if(isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode
+                        .size(16.dp),
+                    tint = if (isSystemInDarkTheme()) OnSurfaceDarkMode else OnSurfaceLightMode
                 )
             } else {
                 Spacer(modifier = Modifier.size(16.dp))

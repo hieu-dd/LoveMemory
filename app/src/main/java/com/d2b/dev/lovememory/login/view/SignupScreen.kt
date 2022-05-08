@@ -1,4 +1,4 @@
-package com.d2b.dev.lovememore
+package com.d2b.dev.lovememory
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,14 +12,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.d2b.dev.lovememore.login.view.SignupScreenViewModel
-import com.d2b.dev.lovememore.ui.theme.CustomButton
-import com.d2b.dev.lovememore.ui.theme.TextInput
-import com.d2b.dev.lovememore.ui.theme.TopSection
+import com.d2b.dev.lovememory.login.view.SignupScreenViewModel
+import com.d2b.dev.lovememory.ui.theme.CustomButton
+import com.d2b.dev.lovememory.ui.theme.TextInput
+import com.d2b.dev.lovememory.ui.theme.TopSection
 
 
 @Composable
@@ -46,7 +43,6 @@ fun InputSection(viewModel: SignupScreenViewModel) {
 //            userName = it
         }
         Spacer(modifier = Modifier.height(16.dp))
-
         TextInput(hint = stringResource(id = R.string.password)) {
 //            password = it
         }
@@ -55,8 +51,10 @@ fun InputSection(viewModel: SignupScreenViewModel) {
 //            isVerifiedPassword = it == password
         }
         Spacer(modifier = Modifier.height(30.dp))
-
-        CustomButton(text = stringResource(id = R.string.sign_up), backgroundColor = MaterialTheme.colors.primary) {
+        CustomButton(
+            text = stringResource(id = R.string.sign_up),
+            backgroundColor = MaterialTheme.colors.primary
+        ) {
         }
     }
 }

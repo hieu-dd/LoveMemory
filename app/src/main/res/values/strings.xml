@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoveMemore</string>
+    <string name="app_name">LoveMemory</string>
     <string name="forget_password">Forget Password?</string>
     <string name="or">or</string>
     <string name="login_title">Login</string>
@@ -11,9 +11,9 @@
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="verify_your_password">Verify your password</string>
-    <string name="app_name">LoveMemore</string>
-    <string name="app_name">LoveMemore</string>
-    <string name="app_name">LoveMemore</string>
-    <string name="app_name">LoveMemore</string>
-    <string name="app_name">LoveMemore</string>
+<!--    <string name="app_name">LoveMemore</string>-->
+<!--    <string name="app_name">LoveMemore</string>-->
+<!--    <string name="app_name">LoveMemore</string>-->
+<!--    <string name="app_name">LoveMemore</string>-->
+<!--    <string name="app_name">LoveMemore</string>-->
 </resources>

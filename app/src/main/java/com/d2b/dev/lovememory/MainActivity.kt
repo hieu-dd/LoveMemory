@@ -1,20 +1,15 @@
-package com.d2b.dev.lovememore
+package com.d2b.dev.lovememory
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.d2b.dev.lovememore.home.HomeScreen
-import com.d2b.dev.lovememore.login.view.LoginScreen
+import com.d2b.dev.lovememory.home.HomeScreen
+import com.d2b.dev.lovememory.login.view.LoginScreen
 import com.d2b.dev.lovememory.ui.theme.LoveMemoreTheme
 
 class MainActivity : ComponentActivity() {
