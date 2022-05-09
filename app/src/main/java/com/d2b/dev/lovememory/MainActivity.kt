@@ -11,7 +11,9 @@ import androidx.navigation.compose.rememberNavController
 import com.d2b.dev.lovememory.home.HomeScreen
 import com.d2b.dev.lovememory.login.view.LoginScreen
 import com.d2b.dev.lovememory.ui.theme.LoveMemoreTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
