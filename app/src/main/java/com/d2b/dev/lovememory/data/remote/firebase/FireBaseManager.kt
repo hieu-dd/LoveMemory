@@ -24,6 +24,6 @@ class FireBaseManager @Inject constructor() {
             val response = Firebase.auth.signInWithEmailAndPassword(email, password).await()
             Resource.Success(data = response)
         } catch (e: Exception) {
-            Resource.Error(message = e.message ?: "")
+            Resource.Error(message = e.message.orEmpty())
         }
 }

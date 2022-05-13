@@ -20,7 +20,7 @@ class LoginScreenViewModel @Inject constructor(
     var password: MutableStateFlow<String> = MutableStateFlow("")
 
     suspend fun loginWithEmail() {
-        _loginState.value = loginRepository.loginWithEmail(email.value ?: "", password.value ?: "")
+        _loginState.value = loginRepository.loginWithEmail(email.value.orEmpty(), password.value.orEmpty())
     }
 
 
