@@ -64,38 +64,25 @@ fun LoginScreen(
         ) {
             TopSection()
             //input section
-            TextInput(hint = stringResource(id = R.string.email), onFocus = {
-                isEmailFilled = true
-            }) {
+            TextInput(
+                hint = stringResource(id = R.string.email),
+                showError = !isEmailFilled,
+                textError = stringResource(id = R.string.please_enter_your_email)
+            ) {
                 viewModel.email.value = it
+                isEmailFilled = true
             }
-            if (!isEmailFilled) {
-                Text(
-                    text = "Please enter your email!",
-                    color = Color.Red,
-                    fontSize = 14.sp,
-                    modifier = Modifier
-                        .padding(top = 4.dp)
-                        .align(Start)
-                )
-            }
+
             Spacer(modifier = Modifier.height(16.dp))
 
-            TextInput(hint = stringResource(id = R.string.password), onFocus = {
-                isPasswordFilled = true
-            }) {
+            TextInput(
+                hint = stringResource(id = R.string.password),
+                showError = !isPasswordFilled,
+                textError = stringResource(id = R.string.please_enter_your_password)
+            ) {
 //            passWord = it
                 viewModel.password.value = it
-            }
-            if (!isPasswordFilled) {
-                Text(
-                    text = "Please enter your password!",
-                    color = Color.Red,
-                    fontSize = 14.sp,
-                    modifier = Modifier
-                        .padding(top = 4.dp)
-                        .align(Start)
-                )
+                isPasswordFilled = true
             }
 
             Text(

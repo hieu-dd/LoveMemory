@@ -13,6 +13,8 @@
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="verify_your_password">Verify your password</string>
+    <string name="please_enter_your_password">Please enter your password!</string>
+    <string name="please_enter_your_email">Please enter your email!</string>
 <!--    <string name="app_name">LoveMemore</string>-->
 <!--    <string name="app_name">LoveMemore</string>-->
 <!--    <string name="app_name">LoveMemore</string>-->

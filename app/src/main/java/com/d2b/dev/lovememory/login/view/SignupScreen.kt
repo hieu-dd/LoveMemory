@@ -45,15 +45,15 @@ fun SignupScreen() {
 fun InputSection(viewModel: SignupScreenViewModel) {
     var isVerifiedPassword by remember { mutableStateOf(false) }
     Column {
-        TextInput(hint = stringResource(id = R.string.user_name),onFocus = {}) {
+        TextInput(hint = stringResource(id = R.string.user_name)) {
 //            userName = it
         }
         Spacer(modifier = Modifier.height(16.dp))
-        TextInput(hint = stringResource(id = R.string.password),onFocus = {}) {
+        TextInput(hint = stringResource(id = R.string.password)) {
 //            password = it
         }
         Spacer(modifier = Modifier.height(16.dp))
-        TextInput(hint = stringResource(id = R.string.verify_your_password),onFocus = {}) {
+        TextInput(hint = stringResource(id = R.string.verify_your_password)) {
 //            isVerifiedPassword = it == password
         }
         Spacer(modifier = Modifier.height(30.dp))

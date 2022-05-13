@@ -16,7 +16,7 @@ class FireBaseManager @Inject constructor() {
         val response = Firebase.auth.createUserWithEmailAndPassword(email, password).await()
         Resource.Success(response)
     } catch (e: Exception) {
-        Resource.Error(e.message ?: "")
+        Resource.Error(e.message.orEmpty())
     }
 
     suspend fun loginUser(email: String, password: String): Resource<AuthResult> =
