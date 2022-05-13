@@ -52,7 +52,7 @@ fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier 
 }
 
 @Composable
-fun TextInput(hint: String, onTextChange: (String) -> Unit) {
+fun TextInput(hint: String, onFocus: (() -> Unit)?, onTextChange: (String) -> Unit) {
     var text by remember { mutableStateOf("") }
     var isHintDisplay by remember { mutableStateOf(hint.isNotEmpty()) }
     Box() {
@@ -61,6 +61,9 @@ fun TextInput(hint: String, onTextChange: (String) -> Unit) {
             onValueChange = {
                 text = it
                 onTextChange(it)
+                if (onFocus != null) {
+                    onFocus()
+                }
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -71,7 +74,10 @@ fun TextInput(hint: String, onTextChange: (String) -> Unit) {
                 .background(MaterialTheme.colors.surface)
                 .padding(horizontal = 20.dp, vertical = 12.dp)
                 .onFocusChanged {
-                    isHintDisplay = it.isFocused != true && text.isEmpty()
+                    isHintDisplay = !it.isFocused && text.isEmpty()
+                    if(it.isFocused && onFocus != null) {
+                            onFocus()
+                        }
                 })
         if (isHintDisplay) {
             Text(

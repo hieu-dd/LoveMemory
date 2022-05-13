@@ -24,7 +24,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
 fun SignupScreen() {
-    val viewModel: SignupScreenViewModel = viewModel()
+    val viewModel: SignupScreenViewModel = hiltViewModel()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -45,15 +45,15 @@ fun SignupScreen() {
 fun InputSection(viewModel: SignupScreenViewModel) {
     var isVerifiedPassword by remember { mutableStateOf(false) }
     Column {
-        TextInput(hint = stringResource(id = R.string.user_name)) {
+        TextInput(hint = stringResource(id = R.string.user_name),onFocus = {}) {
 //            userName = it
         }
         Spacer(modifier = Modifier.height(16.dp))
-        TextInput(hint = stringResource(id = R.string.password)) {
+        TextInput(hint = stringResource(id = R.string.password),onFocus = {}) {
 //            password = it
         }
         Spacer(modifier = Modifier.height(16.dp))
-        TextInput(hint = stringResource(id = R.string.verify_your_password)) {
+        TextInput(hint = stringResource(id = R.string.verify_your_password),onFocus = {}) {
 //            isVerifiedPassword = it == password
         }
         Spacer(modifier = Modifier.height(30.dp))

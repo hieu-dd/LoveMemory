@@ -14,3 +14,5 @@ val SurfaceLightMode = Color(0xFFFFFFFF)
 val OnSurfaceDarkMode = Color(0xFFFFFFFF)
 val OnSurfaceLightMode = Color(0xFF000000)
 
+val disableBackground = Color(0x4D838383)
+
