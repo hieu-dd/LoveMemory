@@ -24,7 +24,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
 fun SignupScreen() {
-    val viewModel: SignupScreenViewModel = viewModel()
+    val viewModel: SignupScreenViewModel = hiltViewModel()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier

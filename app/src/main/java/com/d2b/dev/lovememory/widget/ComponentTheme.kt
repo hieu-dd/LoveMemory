@@ -52,34 +52,55 @@ fun TopSection(title: String, hasArrowBack: Boolean = false, modifier: Modifier 
 }
 
 @Composable
-fun TextInput(hint: String, onTextChange: (String) -> Unit) {
+fun TextInput(
+    hint: String,
+    showError: Boolean = false,
+    textError: String = "",
+    onTextChange: (String) -> Unit
+) {
     var text by remember { mutableStateOf("") }
     var isHintDisplay by remember { mutableStateOf(hint.isNotEmpty()) }
-    Box() {
-        BasicTextField(
-            value = text,
-            onValueChange = {
-                text = it
-                onTextChange(it)
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clip(CircleShape)
-                .background(LightBlue)
-                .padding(1.dp)
-                .clip(CircleShape)
-                .background(MaterialTheme.colors.surface)
-                .padding(horizontal = 20.dp, vertical = 12.dp)
-                .onFocusChanged {
-                    isHintDisplay = it.isFocused != true && text.isEmpty()
-                })
-        if (isHintDisplay) {
-            Text(
-                text = hint,
-                color = DarkGray,
+    Column(
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Box {
+            BasicTextField(
+                value = text,
+                onValueChange = {
+                    text = it
+                    onTextChange(it)
+                },
                 modifier = Modifier
                     .fillMaxWidth()
+                    .clip(CircleShape)
+                    .background(if (!showError) LightBlue else Color.Red)
+                    .padding(1.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colors.surface)
                     .padding(horizontal = 20.dp, vertical = 12.dp)
+                    .onFocusChanged {
+                        isHintDisplay = !it.isFocused && text.isEmpty()
+                    })
+            if (isHintDisplay) {
+                Text(
+                    text = hint,
+                    color = DarkGray,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp, vertical = 12.dp)
+                )
+            }
+        }
+
+        if (showError) {
+            Text(
+                text = textError.orEmpty(),
+                color = Color.Red,
+                fontSize = 14.sp,
+                modifier = Modifier
+                    .padding(top = 4.dp)
+                    .align(Alignment.Start)
             )
         }
     }
