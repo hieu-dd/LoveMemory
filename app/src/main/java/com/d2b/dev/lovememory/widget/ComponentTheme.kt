@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -103,6 +104,34 @@ fun TextInput(
                     .align(Alignment.Start)
             )
         }
+    }
+}
+
+@Composable
+fun SearchBar(hint: String, modifier: Modifier = Modifier) {
+    Box(modifier = modifier) {
+        BasicTextField(
+            value = "",
+            onValueChange = {
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(10.dp))
+                .background(MaterialTheme.colors.surface)
+                .padding(1.dp)
+                .clip(RoundedCornerShape(10.dp))
+                .background(SearchBarBackground)
+                .padding(horizontal = 20.dp, vertical = 12.dp)
+                .onFocusChanged {
+//                    isHintDisplay = !it.isFocused && text.isEmpty()
+                })
+        Text(
+            text = hint,
+            color = DarkGray,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 12.dp)
+        )
     }
 }
 

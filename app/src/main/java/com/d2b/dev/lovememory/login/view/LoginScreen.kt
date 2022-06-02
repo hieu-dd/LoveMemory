@@ -11,7 +11,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomStart
-import androidx.compose.ui.Alignment.Companion.Start
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
@@ -25,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.d2b.dev.lovememory.Screen
+import com.d2b.dev.lovememory.global.util.Screen
 import com.d2b.dev.lovememory.global.util.Resource
 import com.d2b.dev.lovememory.ui.theme.*
 import kotlinx.coroutines.delay
@@ -185,7 +184,7 @@ fun LoginScreen(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(disableBackground),
+                    .background(DisableBackground),
                 contentAlignment = Alignment.Center
             ) {
                 CircularProgressIndicator(

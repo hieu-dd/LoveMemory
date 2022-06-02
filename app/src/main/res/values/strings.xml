@@ -15,9 +15,14 @@
     <string name="verify_your_password">Verify your password</string>
     <string name="please_enter_your_password">Please enter your password!</string>
     <string name="please_enter_your_email">Please enter your email!</string>
-<!--    <string name="app_name">LoveMemore</string>-->
-<!--    <string name="app_name">LoveMemore</string>-->
-<!--    <string name="app_name">LoveMemore</string>-->
-<!--    <string name="app_name">LoveMemore</string>-->
-<!--    <string name="app_name">LoveMemore</string>-->
+    <string name="days_in_love_title">Days In Love</string>
+    <string name="home">Home</string>
+    <string name="diary">Diary</string>
+    <string name="calendar">Calendar</string>
+    <string name="menu">Menu</string>
+    <!--    <string name="app_name">LoveMemore</string>-->
+    <!--    <string name="app_name">LoveMemore</string>-->
+    <!--    <string name="app_name">LoveMemore</string>-->
+    <!--    <string name="app_name">LoveMemore</string>-->
+    <!--    <string name="app_name">LoveMemore</string>-->
 </resources>
